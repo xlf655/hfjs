@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>加油出发</title>
+  <script type="text/javascript">
+    var fiat = {
+      make:"Fiat",
+      model:"500",
+      year:1957,
+      color:"Medium Blue",
+      passengers:2,
+      convertible:false,
+      mileage:88000,
+      started:false,
+      fuel:0,
+      start:function(){
+        if (this.fuel==0) {
+          alert("The car is on empyt,fill up before starting!");
+        } else {
+          this.started=true;
+        }
+      },
+      stop:function () {
+        this.started=false;
+        alert("已经抵达目的地");
+      },
+      drive:function () {
+        if (this.started) {
+          if (this.fuel>0) {
+            alert(this.make+""+this.model+"goes zoom zoom!");
+            this.fuel=this.fuel-1;
+          } else {
+            alert("Uh oh,out of fuel.");
+            this.stop();
+          }
+        } else {
+          alert("You need to start the engine first.");
+        }
+      },
+      addFuel:function (amount) {
+        this.fuel=this.fuel+amount;
+      }
+    };
+
+    fiat.addFuel(5);
+    fiat.start();
+    fiat.drive();
+    fiat.drive();
+    fiat.drive();
+    fiat.stop();
+
+
+
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

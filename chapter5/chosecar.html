@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ChooseCar</title>
+  <script type="text/javascript">
+    var taxi={
+      make:"Webville Motors",
+      model:"Taxi",
+      year:1955,
+      color:"yellow",
+      passengers:4,
+      convertible:false,
+      mileage:281341,
+      started:false,
+      start:function () {
+        this.started=true;
+      },
+      stop:function () {
+        this.started=false;
+      },
+      drive:function () {
+        if (this.started) {
+          alert(this.make +""+this.model+" goes zoom zoom!");
+        }else {
+          alert("You need to start the engine first.")
+        }
+      }
+    };
+    taxi.start();
+    taxi.drive();
+    taxi.stop();
+
+    var cadi={
+      make:"GM",
+      model:"Cadillac",
+      year:1955,
+      color:"tan",
+      passengers:5,
+      convertible:false,
+      mileage:12892,
+      started:false,
+      start:function () {
+        this.started=true;
+      },
+      stop:function () {
+        this.started=false;
+      },
+      drive:function () {
+        if (this.started) {
+          alert(this.make +""+this.model+" goes zoom zoom!");
+        }else {
+          alert("You need to start the engine first.")
+        }
+      }
+    };
+    cadi.start();
+    cadi.drive();
+    cadi.stop();
+    var fiat={
+      make:"Fiat",
+      model:"500",
+      year:1957,
+      color:"Medium Blue",
+      passengers:2,
+      convertible:false,
+      mileage:"88000",
+      started:false,
+      start:function () {
+        this.started=true;
+      },
+      stop:function () {
+        this.started=false;
+      },
+      drive:function () {
+        if (this.started) {
+          alert(this.make +""+this.model+" goes zoom zoom!");
+        }else {
+          alert("You need to start the engine first.")
+        }
+      }
+    };
+    fiat.start();
+    fiat.drive();
+    fiat.stop();
+
+    var chevy={
+      make:"Chevy",
+      model:"Bel Air",
+      year:1957,
+      color:"red",
+      passengers:2,
+      convertible:false,
+      mileage:1021,
+      started:false,
+      start:function () {
+        this.started=true;
+      },
+      stop:function () {
+        this.started=false;
+      },
+      drive:function () {
+        if (this.started) {
+          alert(this.make +""+this.model+" goes zoom zoom!");
+        }else {
+          alert("You need to start the engine first.")
+        }
+      }
+    };
+    chevy.start();
+    chevy.drive();
+    chevy.stop();
+
+
+    function prequal(car) {
+      if (car.mileage>10000) {
+        return false;
+      } else if (car.year>1960) {
+        return false;
+      }
+      return true;
+    }
+    var worthALook=prequal(taxi);
+    if (worthALook) {
+      console.log("You gotta a check out this"+taxi.make+""+taxi.model);
+    } else {
+      console.log("You should really pass on the "+taxi.make+""+taxi.model);
+    }
+    var worthALook=prequal(cadi);
+    if (worthALook) {
+      console.log("You gotta a check out this"+cadi.make+""+cadi.model);
+    } else {
+      console.log("You should really pass on the "+cadi.make +""+cadi.model);
+    }
+    var worthALook=prequal(fiat);
+    if (worthALook) {
+      console.log("You gotta a check out this"+fiat.make +""+fiat.model);
+    } else {
+      console.log("You should really pass on the "+fiat.make +""+fiat.model);
+    }
+    var worthALook=prequal(chevy);
+    if (worthALook) {
+      console.log("You gotta a check out this"+chevy.make +""+chevy.model);
+    } else {
+      console.log("You should really pass on the "+chevy.make+""+chevy.model);
+    }
+
+
+    for(var prop in fiat) {
+      console.log(prop+":"+fiat[prop]);
+    }
+    // 秘密任务
+    function getSecret(file,secretPassword) {
+      file.opened=file.opened+1;
+      if (secretPassword==file.password) {
+        return file.contents;
+      } else {
+        return "Invalid password! No secret for you.";
+      }
+    }
+    function setSecret(file,secretPassword,secret) {
+      if(secretPassword==file.password) {
+        file.opened=0;
+        file.contents=secret;
+      }
+    }
+     var superSecretFile={
+       level:"classified",
+       opened:0,
+       password:2,
+       contents:"Dr.Evel's next meeting is in Detroit."
+     };
+  var secret=getSecret(superSecretFile,2);
+  console.log(secret);
+  setSecret(superSecretFile,2,"Dr.Evel's next meeting is in Philadephia.");
+  secret=getSecret(superSecretFile,2);
+  console.log(secret);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

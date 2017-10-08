@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Playlist</title>
+  <script type="text/javascript">
+    function addSongs() {
+      var song1=document.getElementById("song1");
+      var song2=document.getElementById("song2");
+      var song3=document.getElementById("song3");
+
+      song1.innerHTML="三年二班，周杰伦";
+      song2.innerHTML="以父之名，周杰伦";
+      song3.innerHTML="爱的飞行日记，周杰伦";
+    }
+    window.onload=addSongs;
+    function lietest() {
+      var lies=0;
+      var stolendiamond={};
+      if (stolendiamond) {
+        console.log("you stole the diamond");
+        lies++;
+      }
+      var car={
+        keyinpocket:null
+      };
+      if (car.keyinpocket) {
+        console.log("uh oh guess you stole the car!");
+        lies++;
+      }
+      if(car.emptygastank) {
+        console.log("you drove the car aftet you stole it!");
+        lies++;
+      }
+      var fy=[];
+      if (fy) {
+        console.log("a sure sign of guilt");
+        lies++;
+      }
+      if (fy[0]) {
+        console.log("caught with a stolen item!");
+        lies++;
+      }
+      var yourname=" ";
+      if (yourname) {
+        console.log("guess you lied about your name");
+        lies++;
+      }
+      return lies;
+    }
+    var nol=lietest();
+    console.log("you told "+nol+" lies!");
+    if (nol>=3) {
+      console.log("天降正义！");
+    }
+  </script>
+</head>
+<body>
+  <h1>我喜爱的播放列表</h1>
+  <ul>
+    <li id="song1"></li>
+    <li id="song2"></li>
+    <li id="song3"></li>
+  </ul>
+</body>
+</html>

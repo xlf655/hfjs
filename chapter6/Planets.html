@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript">
+  function init() {
+    var planet=document.getElementById("greenplanet");
+    planet.innerHTML="Red Alert:hit by phaser fire!";
+    planet.setAttribute("class","redtext");
+  }
+    window.onload=init;
+  </script>
+  <title>Planets</title>
+  <style media="screen">
+    .redtext {
+      color:red;
+    }
+
+
+  function lietest() {
+    
+  }
+  </style>
+</head>
+<body>
+  <h1>Green Planet</h1>
+  <p id="greenplanet">All is well</p>
+  <h1>Red Planet</h1>
+  <p id="redplanet">Nothing to report</p>
+  <h1>Blue Planet</h1>
+  <p id="blueplanet">All system A-OK</p>
+</body>
+</html>
